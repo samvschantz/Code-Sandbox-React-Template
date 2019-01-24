@@ -2,3 +2,27 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+body {
+  margin: 0px;
+}
+
+nav h1 {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 900;
+  font-size: 2.3rem;
+  color: white;
+  margin-top: -10px;
+  margin-left: -20px;
+  display: inline-block;
+}
+
+nav {
+  background-color: rgb(2, 112, 2);
+  height: 90px;
+}
+
+.mokita-logo {
+  max-height: 70px;
+  margin-top: 10px;
+}

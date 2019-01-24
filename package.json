@@ -1,7 +1,7 @@
 {
-  "name": "my-create-react",
+  "name": "ghostship",
   "version": "1.0.0",
-  "description": "My template to start react projects",
+  "description": "Passive = Smart",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
