@@ -1,16 +1,17 @@
 .App {
-  font-family: sans-serif;
+  font-family: "Catamaran", sans-serif;
   text-align: center;
 }
 
 body {
   margin: 0px;
+  font-family: "Catamaran", sans-serif;
+  background-color: #afafaf;
 }
 
 nav h1 {
-  font-family: "Catamaran", sans-serif;
   font-weight: 900;
-  font-size: 2.3rem;
+  font-size: 2.8rem;
   color: white;
   margin-top: -10px;
   margin-left: -20px;
@@ -20,9 +21,37 @@ nav h1 {
 nav {
   background-color: rgb(2, 112, 2);
   height: 90px;
+  color: white;
+  font-family: "Catamaran", sans-serif;
+  position: relative;
 }
 
 .mokita-logo {
   max-height: 70px;
   margin-top: 10px;
+}
+
+.tabs p {
+  display: inline-block;
+  margin-right: 40px;
+  font-size: 1.2rem;
+  margin-bottom: 00px;
+}
+
+.login,
+.tabs {
+  display: inline-block;
+  float: right;
+}
+
+.login {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+}
+
+.tabs {
+  bottom: 0;
+  right: 10%;
+  position: absolute;
 }
