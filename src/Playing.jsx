@@ -4,13 +4,13 @@ import minus_sign from "./images/icons/minus_sign.png";
 export const Playing = props => {
   let displayPlaying = <div className="playing" />;
   let anyPlaying = false;
+
   props.soundTiles.forEach(function(tile) {
     if (tile.playing === true) {
       anyPlaying = true;
     }
   });
-  console.log("get here?");
-  console.log(anyPlaying);
+
   if (anyPlaying === false) {
     displayPlaying = (
       <div className="clickToAdd">Click + icon or drag to add sounds</div>
@@ -22,9 +22,8 @@ export const Playing = props => {
           className="playingTilePic"
           src={require(`./images/${tile.name}.${tile.picFormat}`)}
         />
-        <p className="playingTileName">{tile.name}</p>
         <img
-          className="addToPlaying"
+          className="removeFromPlaying"
           src={minus_sign}
           onClick={() => props.togglePlaying(tile.name)}
         />

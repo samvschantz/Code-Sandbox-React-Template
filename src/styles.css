@@ -72,10 +72,31 @@ body {
   border: 2px solid white;
 }
 
+.playingTile {
+  border-radius: 0px;
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0px;
+  border: 1px solid white;
+}
+
 .tilePic {
   border-radius: 20px 20px 0px 0px;
   height: 150px;
   width: 200px;
+}
+
+.playingTilePic:nth-child(1),
+.playingTile:nth-child(1) {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.playingTilePic {
+  border-radius: 0px;
+  height: 150px;
+  width: 150px;
 }
 
 .tileName,
@@ -101,4 +122,15 @@ body {
 
 .addToPlaying:active {
   opacity: 0.8;
+}
+
+.removeFromPlaying {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 20px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 0px 0px 0px 10px;
 }
