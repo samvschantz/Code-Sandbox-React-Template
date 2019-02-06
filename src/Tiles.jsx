@@ -15,6 +15,7 @@ export const Tiles = props => {
         <img
           className="addToPlaying"
           src={tile.playing ? minus_sign : plus_sign}
+          onClick={() => props.togglePlaying(tile.name)}
         />
       </div>
     ));

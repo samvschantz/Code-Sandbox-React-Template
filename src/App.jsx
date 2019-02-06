@@ -36,12 +36,34 @@ export default class App extends Component {
       ],
       playingSounds: []
     };
+
+    this.togglePlaying = this.togglePlaying.bind(this);
   }
+
+  togglePlaying(tileName) {
+    let newTileObj = {};
+    this.state.soundTiles.forEach(function(tile) {
+      if (tileName === tile.name) {
+        newTileObj = tile;
+      }
+    });
+
+    newTileObj.playing = newTileObj.playing === true ? false : true;
+
+    let removeOldTile = this.state.soundTiles.filter(
+      tile => tile.name !== newTileObj.name
+    );
+    this.setState({ links: [...removeOldTile, newTileObj] });
+  }
+
   render() {
     return (
       <div>
         <SearchBar />
-        <Tiles soundTiles={this.state.soundTiles} />
+        <Tiles
+          togglePlaying={this.togglePlaying}
+          soundTiles={this.state.soundTiles}
+        />
         <Playing playingSounds={this.state.playingSounds} />
       </div>
     );
