@@ -60,17 +60,11 @@ export default class App extends Component {
       let id = `audio${newTileObj.name}`;
       aud.setAttribute("id", id);
       document.getElementById("root").append(aud);
-      console.log(aud);
       aud.play();
-
       this.setState({ playingTiles: [...currentPlayingTiles, newTileObj] });
     } else if (newTileObj.playing === false) {
-      console.log("does this not hit?");
       let el = document.getElementById(`audio${newTileObj.name}`);
-      console.log("gets here tho?");
-      console.log(el);
       el.parentNode.removeChild(el);
-      console.log("gets past here");
       let removeOldTile = this.state.playingTiles.filter(
         tile => tile.name !== newTileObj.name
       );
