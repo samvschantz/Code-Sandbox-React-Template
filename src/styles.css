@@ -44,13 +44,14 @@ body {
   right: 0;
   bottom: 0;
   width: 90%;
-  height: 20%;
+  height: 150px;
   border-radius: 20px;
-  display: block;
+  display: inline-block;
   margin: 0 auto 5% auto;
+  background-color: #3f3f3f;
 }
 
 .clickToAdd {
-  position: relative;
-  margin: 0 auto;
+  text-align: center;
+  margin-top: 65px;
 }
