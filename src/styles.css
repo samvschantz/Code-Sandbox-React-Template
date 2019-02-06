@@ -55,3 +55,50 @@ body {
   text-align: center;
   margin-top: 65px;
 }
+
+.displayedTiles {
+  position: fixed;
+  margin-top: 105px;
+  width: calc(100% - 4px);
+  height: calc(100% - 325px);
+}
+
+.tile {
+  border-radius: 20px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  border: 2px solid white;
+}
+
+.tilePic {
+  border-radius: 20px 20px 0px 0px;
+  height: 150px;
+  width: 200px;
+}
+
+.tileName,
+.addToPlaying {
+  display: inline-block;
+}
+
+.tileName {
+  margin-left: 20px;
+}
+
+.addToPlaying {
+  max-width: 30px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 15px;
+  opacity: 0.5;
+}
+
+.addToPlaying:hover {
+  opacity: 1;
+}
+
+.addToPlaying:active {
+  opacity: 0.8;
+}

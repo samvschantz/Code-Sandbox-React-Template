@@ -8,14 +8,41 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      chosenSounds: []
+      soundTiles: [
+        {
+          name: "campfire",
+          soundFormat: "mp3",
+          picFormat: "jpg",
+          playing: false
+        },
+        {
+          name: "forest",
+          soundFormat: "mp3",
+          picFormat: "jpg",
+          playing: false
+        },
+        {
+          name: "waves",
+          soundFormat: "mp3",
+          picFormat: "jpg",
+          playing: false
+        },
+        {
+          name: "waterfall",
+          soundFormat: "mp3",
+          picFormat: "jpg",
+          playing: false
+        }
+      ],
+      playingSounds: []
     };
   }
   render() {
     return (
       <div>
         <SearchBar />
-        <Playing chosenSounds={this.state.chosenSounds} />
+        <Tiles soundTiles={this.state.soundTiles} />
+        <Playing playingSounds={this.state.playingSounds} />
       </div>
     );
   }
