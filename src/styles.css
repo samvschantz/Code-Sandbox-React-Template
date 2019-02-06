@@ -2,3 +2,38 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px;
+}
+
+.searchBar {
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 50px auto 0px auto;
+  font-size: 40px;
+  padding: 0px;
+  width: 300px;
+  height: 40px;
+  border-bottom: 2px solid #5a5a5a;
+  color: #ebebeb;
+  background-color: transparent;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+}
+
+.searchBar,
+.playing {
+  position: fixed;
+}
+
+.searchBar:focus {
+  border-bottom: 2px solid #ebebeb;
+}
