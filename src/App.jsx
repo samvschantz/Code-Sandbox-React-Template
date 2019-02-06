@@ -64,7 +64,7 @@ export default class App extends Component {
           togglePlaying={this.togglePlaying}
           soundTiles={this.state.soundTiles}
         />
-        <Playing playingSounds={this.state.playingSounds} />
+        <Playing soundTiles={this.state.soundTiles} />
       </div>
     );
   }
