@@ -9,15 +9,14 @@ export const Playing = props => {
       anyPlaying = true;
     }
   });
-
+  console.log("get here?");
+  console.log(anyPlaying);
   if (anyPlaying === false) {
     displayPlaying = (
-      <div className="playing">
-        <div className="clickToAdd">Click + icon or drag to add sounds</div>
-      </div>
+      <div className="clickToAdd">Click + icon or drag to add sounds</div>
     );
   } else {
-    displayPlaying = props.soundTiles.map((tile, i) => (
+    displayPlaying = props.playingTiles.map((tile, i) => (
       <div className="playingTile" key={i}>
         <img
           className="playingTilePic"
@@ -33,5 +32,5 @@ export const Playing = props => {
     ));
   }
 
-  return displayPlaying;
+  return <div className="playing">{displayPlaying}</div>;
 };

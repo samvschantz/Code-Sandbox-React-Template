@@ -34,7 +34,7 @@ export default class App extends Component {
           playing: false
         }
       ],
-      playingSounds: []
+      playingTiles: []
     };
 
     this.togglePlaying = this.togglePlaying.bind(this);
@@ -50,10 +50,19 @@ export default class App extends Component {
 
     newTileObj.playing = newTileObj.playing === true ? false : true;
 
+    //toggle whether or not tile is contained in playingTiles here
+    let currentPlayingTiles = this.state.playingTiles;
+
+    this.state.playingTiles.forEach(function(tile) {
+      if (newTileObj.name === tile && newTileObj.playing === true) {
+        this.setState({ playingTiles: [...currentPlayingTiles, newTileObj] });
+      }
+    });
+
     let removeOldTile = this.state.soundTiles.filter(
       tile => tile.name !== newTileObj.name
     );
-    this.setState({ links: [...removeOldTile, newTileObj] });
+    this.setState({ soundTiles: [...removeOldTile, newTileObj] });
   }
 
   render() {
