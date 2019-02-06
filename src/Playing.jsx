@@ -27,6 +27,9 @@ export const Playing = props => {
           src={minus_sign}
           onClick={() => props.togglePlaying(tile.name)}
         />
+        <p>
+          {tile.name} + {tile.soundFormat}
+        </p>
       </div>
     ));
   }
