@@ -4,6 +4,8 @@ import minus_sign from "./images/icons/minus_sign.png";
 
 export const Tiles = props => {
   let displayTiles = <p>Tiles</p>;
+  if (props.soundTiles.length) {
+  }
   if (props.soundTiles.length !== 0) {
     displayTiles = props.soundTiles.map((tile, i) => (
       <div className="tile" key={i} id={tile.name}>

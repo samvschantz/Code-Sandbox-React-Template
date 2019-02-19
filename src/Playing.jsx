@@ -13,7 +13,7 @@ export const Playing = props => {
 
   if (anyPlaying === false) {
     displayPlaying = (
-      <div className="clickToAdd">Click + icon or drag to add sounds</div>
+      <div className="clickToAdd">Click + icon to add sounds</div>
     );
   } else {
     displayPlaying = props.playingTiles.map((tile, i) => (

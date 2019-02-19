@@ -2,45 +2,19 @@ import React, { Component } from "react";
 import { Tiles } from "./Tiles";
 import { SearchBar } from "./SearchBar";
 import { Playing } from "./Playing";
+import TileData from "./JSONdata/soundTiles.json";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      soundTiles: [
-        {
-          name: "campfire",
-          sound: "./sounds/campfire.mp3",
-          picFormat: "jpg",
-          playing: false
-        },
-        {
-          name: "forest",
-          sound: "./sounds/forest.mp3",
-          picFormat: "jpg",
-          playing: false
-        },
-        {
-          name: "waves",
-          sound: "./sounds/waves.mp3",
-          picFormat: "jpg",
-          playing: false
-        },
-        {
-          name: "waterfall",
-          sound: "./sounds/waterfall.mp3",
-          picFormat: "jpg",
-          playing: false
-        }
-      ],
+      soundTiles: TileData,
       playingTiles: []
     };
 
     this.togglePlaying = this.togglePlaying.bind(this);
   }
-
-  playTiles() {}
 
   togglePlaying(tileName) {
     let newTileObj = {};

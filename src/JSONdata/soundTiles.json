@@ -1,0 +1,26 @@
+[
+  {
+    "name": "campfire",
+    "sound": "./sounds/campfire.mp3",
+    "picFormat": "jpg",
+    "playing": false
+  },
+  {
+    "name": "forest",
+    "sound": "./sounds/forest.mp3",
+    "picFormat": "jpg",
+    "playing": false
+  },
+  {
+    "name": "waves",
+    "sound": "./sounds/waves.mp3",
+    "picFormat": "jpg",
+    "playing": false
+  },
+  {
+    "name": "waterfall",
+    "sound": "./sounds/waterfall.mp3",
+    "picFormat": "jpg",
+    "playing": false
+  }
+]
