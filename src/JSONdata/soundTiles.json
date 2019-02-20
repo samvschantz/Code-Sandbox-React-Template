@@ -3,24 +3,32 @@
     "name": "campfire",
     "sound": "./sounds/campfire.mp3",
     "picFormat": "jpg",
-    "playing": false
+    "playing": false,
+    "tags": ["fire", "camp", "campfire"],
+    "uuid": "456asd54asd546das"
   },
   {
     "name": "forest",
     "sound": "./sounds/forest.mp3",
     "picFormat": "jpg",
-    "playing": false
+    "playing": false,
+    "tags": ["forest", "birds"],
+    "uuid": "etqw542684t42wt468tqw84"
   },
   {
     "name": "waves",
     "sound": "./sounds/waves.mp3",
     "picFormat": "jpg",
-    "playing": false
+    "playing": false,
+    "tags": ["waves", "water", "beach", "surf"],
+    "uuid": "a4h5a6h4sa5h4ssj8hjhsf46hs46h"
   },
   {
     "name": "waterfall",
     "sound": "./sounds/waterfall.mp3",
     "picFormat": "jpg",
-    "playing": false
+    "playing": false,
+    "tags": ["waterfall", "water"],
+    "uuid": "fqafwqa48qffffffwf8qf7a8fs6"
   }
 ]

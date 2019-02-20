@@ -14,6 +14,32 @@ export default class App extends Component {
     };
 
     this.togglePlaying = this.togglePlaying.bind(this);
+    this.onEntry = this.onEntry.bind(this);
+  }
+
+  onEntry(entry) {
+    let input = entry.target.value;
+    this.reorderTiles(input);
+  }
+
+  reorderTiles(criteria) {
+    let newOrder = [];
+    let soundTilesArray = [...this.state.soundTiles];
+    soundTilesArray.forEach(function(soundTile) {
+      soundTile.tags.forEach(function(tag) {
+        let criteriaLength = criteria.length;
+        let tagSlice = tag.slice(0, criteriaLength);
+        if (criteria === tagSlice) {
+          if (newOrder.length > 0 && newOrder[0].uuid !== soundTile.uuid) {
+            newOrder.unshift(soundTile);
+          } else if (newOrder.length === 0) {
+            newOrder = [soundTile];
+          }
+        }
+      });
+    });
+    console.log(newOrder);
+    //this.setState({ playingTiles: newOrder });
   }
 
   togglePlaying(tileName) {
@@ -54,7 +80,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onEntry={this.onEntry} />
         <Tiles
           togglePlaying={this.togglePlaying}
           soundTiles={this.state.soundTiles}
