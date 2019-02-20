@@ -24,22 +24,29 @@ export default class App extends Component {
 
   reorderTiles(criteria) {
     let newOrder = [];
+    let removalArray = [];
     let soundTilesArray = [...this.state.soundTiles];
-    soundTilesArray.forEach(function(soundTile) {
+    soundTilesArray.forEach(function(soundTile, index) {
+      let soundTilesArrayIndex = index;
       soundTile.tags.forEach(function(tag) {
         let criteriaLength = criteria.length;
         let tagSlice = tag.slice(0, criteriaLength);
         if (criteria === tagSlice) {
-          if (newOrder.length > 0 && newOrder[0].uuid !== soundTile.uuid) {
+          if (newOrder.length && newOrder[0].uuid !== soundTile.uuid) {
+            removalArray.push(soundTilesArrayIndex);
             newOrder.unshift(soundTile);
           } else if (newOrder.length === 0) {
+            removalArray.push(soundTilesArrayIndex);
             newOrder = [soundTile];
           }
         }
       });
     });
-    console.log(newOrder);
-    //this.setState({ playingTiles: newOrder });
+    for (let i = removalArray.length - 1; i >= 0; i--) {
+      soundTilesArray.splice(removalArray[i], 1);
+    }
+    newOrder = newOrder.concat(soundTilesArray);
+    this.setState({ soundTiles: newOrder });
   }
 
   togglePlaying(tileName) {
@@ -74,6 +81,7 @@ export default class App extends Component {
     let removeOldTile = this.state.soundTiles.filter(
       tile => tile.name !== newTileObj.name
     );
+    console.log(removeOldTile);
     this.setState({ soundTiles: [...removeOldTile, newTileObj] });
   }
 
