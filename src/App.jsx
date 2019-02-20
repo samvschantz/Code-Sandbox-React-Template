@@ -3,6 +3,10 @@ import { Tiles } from "./Tiles";
 import { SearchBar } from "./SearchBar";
 import { Playing } from "./Playing";
 import TileData from "./JSONdata/soundTiles.json";
+import {
+  checkSameObject,
+  checkSameObjectArray
+} from "./myInternalLibraries/object";
 
 export default class App extends Component {
   constructor(props) {
