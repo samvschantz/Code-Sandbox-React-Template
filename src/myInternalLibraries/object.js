@@ -1,6 +1,8 @@
 export const checkSameObjectArray = (objectArray, objectArrayToCompare) => {
-  objectArray = objectArray.sort();
-  objectArrayToCompare = objectArrayToCompare.sort();
+  objectArray = objectArray.sort((a, b) => (a.name > b.name ? 1 : -1));
+  objectArrayToCompare = objectArrayToCompare.sort((a, b) =>
+    a.name > b.name ? 1 : -1
+  );
   let match = true;
   if (objectArray.length !== objectArrayToCompare.length) {
     match = false;
@@ -34,8 +36,7 @@ export const checkSameObject = (object, objectToCompare) => {
 
   let keysMatch = compareArrays(objectKeysArray, objectToCompareKeysArray);
 
-  let valsMatch = compareArrays(objectValsArray, objectToCompareValsArray);
-
+  // let valsMatch = compareArrays(objectValsArray, objectToCompareValsArray);
   if (keysMatch && valsMatch) {
     return true;
   } else {
