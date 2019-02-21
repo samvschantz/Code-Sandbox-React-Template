@@ -134,3 +134,19 @@ body {
   padding: 5px;
   border-radius: 0px 0px 0px 10px;
 }
+
+#pButton {
+  height: 60px;
+  width: 60px;
+  border: none;
+  background-color: transparent;
+  background-size: 50% 50%;
+  background-position: center;
+}
+
+.play {
+  background: url("./images/play.png") no-repeat;
+}
+.pause {
+  background: url("./images/pause.png") no-repeat;
+}

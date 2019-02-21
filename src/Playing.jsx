@@ -3,6 +3,7 @@ import minus_sign from "./images/icons/minus_sign.png";
 
 export const Playing = props => {
   let displayPlaying = <div className="playing" />;
+  let masterControls = <div />;
   let anyPlaying = false;
 
   props.soundTiles.forEach(function(tile) {
@@ -27,12 +28,23 @@ export const Playing = props => {
           src={minus_sign}
           onClick={() => props.togglePlaying(tile.name)}
         />
-        <p>
-          {tile.name} + {tile.soundFormat}
-        </p>
       </div>
     ));
+    masterControls = (
+      <div className="masterControls">
+        <button
+          id="pButton"
+          class="play"
+          onClick={props.clickMasterPlayButton}
+        />
+      </div>
+    );
   }
 
-  return <div className="playing">{displayPlaying}</div>;
+  return (
+    <div className="playing">
+      {displayPlaying}
+      {masterControls}
+    </div>
+  );
 };

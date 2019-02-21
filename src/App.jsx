@@ -19,6 +19,7 @@ export default class App extends Component {
 
     this.togglePlaying = this.togglePlaying.bind(this);
     this.onEntry = this.onEntry.bind(this);
+    this.clickMasterPlayButton = this.clickMasterPlayButton.bind(this);
   }
 
   onEntry(entry) {
@@ -60,6 +61,26 @@ export default class App extends Component {
     if (!checkSameObjectArray(newOrder, oldOrderSlice)) {
       newOrder = newOrder.concat(soundTilesArray);
       this.setState({ soundTiles: newOrder });
+    }
+  }
+
+  clickMasterPlayButton() {
+    let sounds = document.getElementsByTagName("AUDIO");
+    let numSounds = sounds.length;
+    let playing = true;
+    if (sounds[0].paused) {
+      playing = false;
+    }
+    for (let i = 0; i <= numSounds; i++) {
+      if (!playing) {
+        sounds[i].play();
+        pButton.className = "";
+        pButton.className = "play";
+      } else {
+        sounds[i].pause();
+        pButton.className = "";
+        pButton.className = "pause";
+      }
     }
   }
 
@@ -110,6 +131,7 @@ export default class App extends Component {
           soundTiles={this.state.soundTiles}
           playingTiles={this.state.playingTiles}
           togglePlaying={this.togglePlaying}
+          clickMasterPlayButton={this.clickMasterPlayButton}
         />
       </div>
     );
