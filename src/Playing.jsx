@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import minus_sign from "./images/icons/minus_sign.png";
+import play from "./images/icons/play.png";
+import pause from "./images/icons/pause.png";
 
 export const Playing = props => {
   let displayPlaying = <div className="playing" />;
   let masterControls = <div />;
   let anyPlaying = false;
+  let playButton = props.playing;
 
   props.soundTiles.forEach(function(tile) {
     if (tile.playing === true) {
@@ -31,12 +34,26 @@ export const Playing = props => {
       </div>
     ));
     masterControls = (
-      <div className="masterControls">
-        <button
-          id="pButton"
-          class="play"
-          onClick={props.clickMasterPlayButton}
-        />
+      <div className="masterControlsContainer">
+        <div className="masterControls">
+          <img
+            src={playButton ? pause : play}
+            id="pButton"
+            className="play"
+            onClick={props.clickMasterPlayButton}
+          />
+          <div className="slidecontainer">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={props.volume}
+              onChange={props.handleVolumeChange}
+              className="slider"
+              id="myRange"
+            />
+          </div>
+        </div>
       </div>
     );
   }

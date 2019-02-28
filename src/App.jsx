@@ -14,12 +14,27 @@ export default class App extends Component {
 
     this.state = {
       soundTiles: TileData,
-      playingTiles: []
+      playingTiles: [],
+      currentlyPlaying: false,
+      volume: 50
     };
 
     this.togglePlaying = this.togglePlaying.bind(this);
     this.onEntry = this.onEntry.bind(this);
     this.clickMasterPlayButton = this.clickMasterPlayButton.bind(this);
+    this.handleVolumeChange = this.handleVolumeChange.bind(this);
+  }
+
+  handleVolumeChange() {
+    let slider = document.getElementById("myRange");
+    this.setState({ volume: slider.value });
+    let sounds = document.getElementsByTagName("AUDIO");
+    let numSounds = sounds.length;
+    console.log(slider.value / 100);
+    for (let i = 0; i <= numSounds; i++) {
+      sounds[i].volume = slider.value / 100;
+    }
+    console.log(slider.value);
   }
 
   onEntry(entry) {
@@ -76,10 +91,12 @@ export default class App extends Component {
         sounds[i].play();
         pButton.className = "";
         pButton.className = "play";
+        this.setState({ currentlyPlaying: true });
       } else {
         sounds[i].pause();
         pButton.className = "";
         pButton.className = "pause";
+        this.setState({ currentlyPlaying: false });
       }
     }
   }
@@ -103,7 +120,10 @@ export default class App extends Component {
       aud.setAttribute("id", id);
       document.getElementById("root").append(aud);
       aud.play();
-      this.setState({ playingTiles: [...currentPlayingTiles, newTileObj] });
+      this.setState({
+        playingTiles: [...currentPlayingTiles, newTileObj],
+        currentlyPlaying: true
+      });
     } else if (newTileObj.playing === false) {
       let el = document.getElementById(`audio${newTileObj.name}`);
       el.parentNode.removeChild(el);
@@ -116,7 +136,9 @@ export default class App extends Component {
     let removeOldTile = this.state.soundTiles.filter(
       tile => tile.name !== newTileObj.name
     );
-    this.setState({ soundTiles: [...removeOldTile, newTileObj] });
+    this.setState({
+      soundTiles: [...removeOldTile, newTileObj]
+    });
   }
 
   render() {
@@ -128,7 +150,10 @@ export default class App extends Component {
           soundTiles={this.state.soundTiles}
         />
         <Playing
+          volume={this.state.volume}
+          handleVolumeChange={this.handleVolumeChange}
           soundTiles={this.state.soundTiles}
+          playing={this.state.currentlyPlaying}
           playingTiles={this.state.playingTiles}
           togglePlaying={this.togglePlaying}
           clickMasterPlayButton={this.clickMasterPlayButton}
