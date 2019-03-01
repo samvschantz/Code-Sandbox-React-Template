@@ -162,9 +162,15 @@ body {
   margin: 0 auto;
 }
 
+.slidecontainer {
+  width: 96px;
+  height: 108px;
+  margin-left: -28px;
+}
+
 .slidecontainer input {
-  -webkit-appearance: slider-vertical;
-  width: 40px;
+  transform: rotateZ(270deg);
+  width: 90px;
   margin: 0px;
   height: 100px;
   margin-top: 5px;
@@ -196,34 +202,31 @@ input[type="range"]::-ms-track {
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #000000;
-  height: 36px;
+  height: 16px;
   width: 16px;
-  border-radius: 3px;
+  border-radius: 20px;
   background: #ffffff;
   cursor: pointer;
-  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  margin-top: -3.5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
 }
 
+input[type="range"]::-webkit-slider-thumb:active,
+input[type="range"]::-webkit-slider-thumb:hover {
+  border: 4px solid #ffffff;
+  height: 16px;
+  width: 16px;
+  background: #9e9e9e;
+}
+
 /* All the same stuff for Firefox */
+input[type="range"]::-ms-thumb,
 input[type="range"]::-moz-range-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
-  height: 36px;
+  height: 16px;
   width: 16px;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-/* All the same stuff for IE */
-input[type="range"]::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
+  border-radius: 20px;
   background: #ffffff;
   cursor: pointer;
 }
@@ -233,13 +236,13 @@ input[type="range"]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #3071a9;
+  background: #5a5a5a;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #367ebd;
+  background: #5a5a5a;
 }
 
 input[type="range"]::-moz-range-track {
@@ -247,7 +250,7 @@ input[type="range"]::-moz-range-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #3071a9;
+  background: #29ac5b;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -262,20 +265,19 @@ input[type="range"]::-ms-track {
   color: transparent;
 }
 input[type="range"]::-ms-fill-lower {
-  background: #2a6495;
+  background: #29ac5b;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type="range"]:focus::-ms-fill-lower {
-  background: #3071a9;
+  background: #29ac5b;
 }
 input[type="range"]::-ms-fill-upper {
-  background: #3071a9;
+  background: #29ac5b;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type="range"]:focus::-ms-fill-upper {
-  background: #367ebd;
+  background: #29ac5b;
 }
